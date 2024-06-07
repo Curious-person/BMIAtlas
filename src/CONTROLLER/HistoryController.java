@@ -20,7 +20,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class ResultsController implements Initializable {
+public class HistoryController implements Initializable {
     @FXML
     private TextField heighttext, weighttext;
 
@@ -28,7 +28,7 @@ public class ResultsController implements Initializable {
     Stage stage;
     
     @FXML
-    private Button addtohistory; 
+    private Button signup; 
 
     @FXML
     private AnchorPane anchorRoot;
@@ -37,7 +37,7 @@ public class ResultsController implements Initializable {
     private StackPane parentContainer;
 
     @FXML
-    private ImageView history;
+    private ImageView back;
     
 
     // EXIT & MIN BUTTONS-------------------------------------------------------------------
@@ -50,42 +50,24 @@ public class ResultsController implements Initializable {
         stage.setIconified(true);
     }
 
+    @FXML
+    private void back(MouseEvent event) throws IOException {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/Calculator.fxml"));
+            Parent root = loader.load();
+            
+            Scene scene = back.getScene();
+            Stage currentStage = (Stage) scene.getWindow();
+    
+            scene.setRoot(root);
+            
+            currentStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Your initialization code here
-    }
-
-    @FXML
-    private void addtohistory(ActionEvent event) throws IOException {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/History.fxml"));
-            Parent root = loader.load();
-            
-            Scene scene = addtohistory.getScene();
-            Stage currentStage = (Stage) scene.getWindow();
-    
-            scene.setRoot(root);
-            
-            currentStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    private void history(MouseEvent event) throws IOException {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/History.fxml"));
-            Parent root = loader.load();
-            
-            Scene scene = history.getScene();
-            Stage currentStage = (Stage) scene.getWindow();
-    
-            scene.setRoot(root);
-            
-            currentStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }
