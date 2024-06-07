@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="parentContainer" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER.CALCULATORCONTROLLER">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../CSS/STYLE.css">
+         <children>
+            <ImageView fitHeight="1080.0" fitWidth="1920.0">
+               <image>
+                  <Image url="@../PICTURES/CALCULATOR/BG.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="1080.0" fitWidth="1920.0" styleClass="fade-in">
+               <image>
+                  <Image url="@../PICTURES/CALCULATOR/TITLE.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="1080.0" fitWidth="1920.0">
+               <image>
+                  <Image url="@../PICTURES/CALCULATOR/GREENBG.png" />
+               </image>
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" height="0.0" radius="12.81" width="53.24">
+                     <color>
+                        <Color opacity="0.9465649127960205" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="1080.0" fitWidth="1920.0">
+               <image>
+                  <Image url="@../PICTURES/CALCULATOR/BODYPARAMETERS.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="1080.0" fitWidth="1920.0">
+               <image>
+                  <Image url="@../PICTURES/CALCULATOR/INSTRUCTIONS.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="1080.0" fitWidth="1920.0">
+               <image>
+                  <Image url="@../PICTURES/CALCULATOR/HEIGHTWEIGHT.png" />
+               </image>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" height="44.5" offsetY="10.0" radius="27.6" width="67.9">
+                     <color>
+                        <Color opacity="0.4300000071525574" />
+                     </color></DropShadow>
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="1080.0" fitWidth="1920.0">
+               <image>
+                  <Image url="@../PICTURES/CALCULATOR/HISTORY.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="1870.0" layoutY="10.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="30.0" prefWidth="30.0" text="X">
+               <font>
+                  <Font name="Arial" size="20.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="custom-button3" />
+                  <String fx:value="translucent" />
+               </styleClass>
+            </Button>
+            <Button layoutX="1825.0" layoutY="10.0" mnemonicParsing="false" onAction="#minimizeWindow" prefHeight="30.0" prefWidth="30.0" text="—">
+               <font>
+                  <Font name="Baskerville Old Face" size="20.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="custom-button4" />
+                  <String fx:value="translucent" />
+               </styleClass>
+            </Button>
+            <TextField fx:id="heighttext" alignment="CENTER" layoutX="1047.0" layoutY="473.0" prefHeight="235.0" prefWidth="305.0" promptText="cm">
+               <styleClass>
+                  <String fx:value="text-field-with-bottom-border" />
+                  <String fx:value="text-field-with-prompt" />
+               </styleClass>
+               <font>
+                  <Font name="Arial Black" size="32.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="weighttext" alignment="CENTER" layoutX="1512.0" layoutY="473.0" prefHeight="235.0" prefWidth="305.0" promptText="kg">
+               <styleClass>
+                  <String fx:value="text-field-with-bottom-border" />
+                  <String fx:value="text-field-with-prompt" />
+               </styleClass>
+               <font>
+                  <Font name="Arial Black" size="32.0" />
+               </font>
+            </TextField>
+            <Button fx:id="calculatebtn" layoutX="1268.0" layoutY="902.0" mnemonicParsing="false" onAction="#btncalculate" prefHeight="62.0" prefWidth="324.0" styleClass="custom-button2" text="Calculate">
+               <font>
+                  <Font name="Arial Bold" size="21.0" />
+               </font>
+            </Button>
+            <Button fx:id="historybtn" layoutX="1838.0" layoutY="181.0" mnemonicParsing="false" onAction="#loadSecond" prefHeight="38.0" prefWidth="39.0">
+               <font>
+                  <Font name="Baskerville Old Face" size="20.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="custom-button4" />
+                  <String fx:value="translucent" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

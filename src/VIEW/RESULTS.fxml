@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../CSS/STYLE.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER.RESULTSCONTROLLER">
+   <children>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0">
+         <image>
+            <Image url="@../PICTURES/RESULTS/BG.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0">
+         <image>
+            <Image url="@../PICTURES/RESULTS/GREENBG.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0">
+         <image>
+            <Image url="@../PICTURES/RESULTS/BODYPARAMETERS.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0">
+         <image>
+            <Image url="@../PICTURES/RESULTS/HEIGHTWEIGHT.png" />
+         </image>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" height="44.5" offsetY="10.0" radius="27.6" width="67.9">
+               <color>
+                  <Color opacity="0.44999998807907104" />
+               </color>
+            </DropShadow>
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0">
+         <image>
+            <Image url="@../PICTURES/RESULTS/YOUR%20RESULTS.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0">
+         <image>
+            <Image url="@../PICTURES/RESULTS/BMI%20TABLE.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="history" fitHeight="1080.0" fitWidth="1920.0">
+         <image>
+            <Image url="@../PICTURES/RESULTS/HISTORY.png" />
+         </image>
+         <styleClass>
+            <String fx:value="translucent" />
+            <String fx:value="hand-cursor" />
+         </styleClass>
+      </ImageView>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0">
+         <image>
+            <Image url="@../PICTURES/RESULTS/INSTRUCTIONS.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0">
+         <image>
+            <Image url="@../PICTURES/RESULTS/RESULTS.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="addhistorybtn" layoutX="1304.0" layoutY="902.0" mnemonicParsing="false" onAction="#addToHistory" prefHeight="63.0" prefWidth="324.0" styleClass="custom-button5" text="Add to History">
+         <font>
+            <Font name="Arial Bold" size="23.0" />
+         </font></Button>
+      <Button fx:id="retrybtn" layoutX="327.0" layoutY="902.0" mnemonicParsing="false" onAction="#btncalculate1" prefHeight="63.0" prefWidth="324.0" styleClass="custom-button2" text="Retry">
+         <font>
+            <Font name="Arial Bold" size="23.0" />
+         </font>
+      </Button>
+
+      <Button layoutX="1825.0" layoutY="10.0" mnemonicParsing="false" onAction="#minimizeWindow" prefHeight="30.0" prefWidth="30.0" text="—">
+         <font>
+            <Font name="Baskerville Old Face" size="20.0" />
+         </font>
+         <styleClass>
+            <String fx:value="custom-button7" />
+            <String fx:value="translucent" />
+         </styleClass>
+      </Button>
+      <Button layoutX="1870.0" layoutY="10.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="30.0" prefWidth="30.0" text="X">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+         <styleClass>
+            <String fx:value="custom-button6" />
+            <String fx:value="translucent" />
+         </styleClass>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0e0e0" height="50.0" layoutX="983.0" layoutY="586.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="289.0" />
+      <Label fx:id="calculation" layoutX="1034.0" layoutY="130.0" styleClass="custom-text" text="00.0" />
+      <Label layoutX="1025.0" layoutY="449.0" textFill="#202020">
+         <font>
+            <Font name="Arial Black" size="45.0" />
+         </font>
+      </Label>
+      <Label fx:id="calculation1" layoutX="1214.0" layoutY="542.0" text="00.0" textFill="#202020">
+         <font>
+            <Font name="Arial Bold" size="34.0" />
+         </font>
+      </Label>
+      <Label fx:id="results" layoutX="1025.0" layoutY="589.0" text="Category" textFill="#202020" wrapText="true">
+         <font>
+            <Font name="Arial Bold" size="34.0" />
+         </font>
+      </Label>
+      <Button fx:id="viewhistorybtn" layoutX="1799.0" layoutY="111.0" mnemonicParsing="false" onAction="#switchtotable" prefHeight="50.0" prefWidth="54.0" style="-fx-background-color: 0000;" textFill="TRANSPARENT" />
+      <TextField fx:id="weighttext" alignment="CENTER" layoutX="555.0" layoutY="471.0" prefHeight="240.0" prefWidth="311.0" promptText="00.0" styleClass="text-field-with-bottom-border">
+         <font>
+            <Font name="Arial Bold" size="72.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="heighttext" alignment="CENTER" layoutX="90.0" layoutY="469.0" prefHeight="242.0" prefWidth="315.0" promptText="000" styleClass="text-field-with-bottom-border">
+         <font>
+            <Font name="Arial Black" size="72.0" />
+         </font>
+      </TextField>
+      <Label fx:id="results2" layoutX="1035.0" layoutY="430.0" text="Category" textFill="#202020" wrapText="true">
+         <font>
+            <Font name="Arial Black" size="34.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
