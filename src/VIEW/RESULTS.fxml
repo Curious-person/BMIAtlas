@@ -1,162 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="anchorpane" stylesheets="@../Resources/Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ResultsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../CSS/STYLE.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER.RESULTSCONTROLLER">
    <children>
       <ImageView fitHeight="1080.0" fitWidth="1920.0">
          <image>
-            <Image url="@../Resources/Pictures/Results/BodyParametersR.png" />
+            <Image url="@../PICTURES/RESULTS/BG.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="1080.0" fitWidth="1920.0">
          <image>
-            <Image url="@../Resources/Pictures/Results/YourResuts.png" />
+            <Image url="@../PICTURES/RESULTS/GREENBG.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="1080.0" fitWidth="1920.0">
          <image>
-            <Image url="@../Resources/Pictures/Results/Category.png" />
+            <Image url="@../PICTURES/RESULTS/BODYPARAMETERS.png" />
          </image>
-      </ImageView>
-      <ImageView fx:id="history" fitHeight="1080.0" fitWidth="1920.0" onMouseClicked="#history">
-         <image>
-            <Image url="@../Resources/Pictures/Results/HistoryR.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
       </ImageView>
       <ImageView fitHeight="1080.0" fitWidth="1920.0">
          <image>
-            <Image url="@../Resources/Pictures/Results/LearnMore.png" />
+            <Image url="@../PICTURES/RESULTS/HEIGHTWEIGHT.png" />
          </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" height="44.5" offsetY="10.0" radius="27.6" width="67.9">
+               <color>
+                  <Color opacity="0.44999998807907104" />
+               </color>
+            </DropShadow>
+         </effect>
       </ImageView>
       <ImageView fitHeight="1080.0" fitWidth="1920.0">
          <image>
-            <Image url="@../Resources/Pictures/Calculator/ProfileIcon2.png" />
+            <Image url="@../PICTURES/RESULTS/YOUR%20RESULTS.png" />
          </image>
       </ImageView>
-      <Label layoutX="106.0" layoutY="1003.0" text="User" textFill="#f9faf4">
-         <font>
-            <Font name="Arial Black" size="21.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Label>
-      <Label layoutX="107.0" layoutY="1027.0" text="Log out" textFill="#f9faf4" underline="true">
-         <font>
-            <Font name="Arial Bold" size="16.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Label>
-      <Label fx:id="calculation" layoutX="1009.0" layoutY="82.0" styleClass="bmiresult" text="00.0" />
-      <Label fx:id="calculation1" layoutX="1024.0" layoutY="366.0" styleClass="categoryresult" text="Category" />
-      <Button layoutX="319.0" layoutY="918.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="323.0" styleClass="loginbutton" text="Retry">
-         <font>
-            <Font name="System Bold" size="21.0" />
-         </font>
-      </Button>
-      <Button layoutX="103.0" layoutY="311.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="323.0" styleClass="genderbuttons" text="Male">
-         <font>
-            <Font name="System Bold" size="21.0" />
-         </font>
-      </Button>
-      <Button layoutX="535.0" layoutY="311.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="323.0" styleClass="genderbuttons" text="Female">
-         <font>
-            <Font name="System Bold" size="21.0" />
-         </font>
-      </Button>
-      <TextField layoutX="102.0" layoutY="452.0" prefHeight="65.0" prefWidth="757.0" promptText="cm" styleClass="textfield">
-         <font>
-            <Font name="Arial Italic" size="17.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </TextField>
-      <Label layoutX="102.0" layoutY="417.0" text="Height" textFill="#4d6698">
-         <font>
-            <Font name="Arial Narrow" size="28.0" />
-         </font>
-      </Label>
-      <Label layoutX="102.0" layoutY="276.0" text="Sex" textFill="#4d6698">
-         <font>
-            <Font name="Arial Narrow" size="28.0" />
-         </font>
-      </Label>
-      <TextField layoutX="103.0" layoutY="596.0" prefHeight="65.0" prefWidth="757.0" promptText="kg" styleClass="textfield">
-         <font>
-            <Font name="Arial Italic" size="17.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </TextField>
-      <Label layoutX="103.0" layoutY="561.0" text="Weight" textFill="#4d6698">
-         <font>
-            <Font name="Arial Narrow" size="28.0" />
-         </font>
-      </Label>
-      <TextField layoutX="103.0" layoutY="739.0" prefHeight="65.0" prefWidth="757.0" promptText="yrs" styleClass="textfield">
-         <font>
-            <Font name="Arial Italic" size="17.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </TextField>
-      <Label layoutX="103.0" layoutY="704.0" text="Age" textFill="#4d6698">
-         <font>
-            <Font name="Arial Narrow" size="28.0" />
-         </font>
-      </Label>
-      <Label layoutX="1042.0" layoutY="548.0" text="Category" textFill="#4d6698">
-         <font>
-            <Font name="Arial Black" size="33.0" />
-         </font>
-      </Label>
-      <Button layoutX="1870.0" layoutY="10.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="30.0" prefWidth="30.0" text="X">
-         <font>
-            <Font name="Arial" size="20.0" />
-         </font>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0">
+         <image>
+            <Image url="@../PICTURES/RESULTS/BMI%20TABLE.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="history" fitHeight="1080.0" fitWidth="1920.0">
+         <image>
+            <Image url="@../PICTURES/RESULTS/HISTORY.png" />
+         </image>
          <styleClass>
-            <String fx:value="exitbutton1" />
             <String fx:value="translucent" />
+            <String fx:value="hand-cursor" />
          </styleClass>
+      </ImageView>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0">
+         <image>
+            <Image url="@../PICTURES/RESULTS/INSTRUCTIONS.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0">
+         <image>
+            <Image url="@../PICTURES/RESULTS/RESULTS.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="addhistorybtn" layoutX="1304.0" layoutY="902.0" mnemonicParsing="false" onAction="#addToHistory" prefHeight="63.0" prefWidth="324.0" styleClass="custom-button5" text="Add to History">
+         <font>
+            <Font name="Arial Bold" size="23.0" />
+         </font></Button>
+      <Button fx:id="retrybtn" layoutX="327.0" layoutY="902.0" mnemonicParsing="false" onAction="#btncalculate1" prefHeight="63.0" prefWidth="324.0" styleClass="custom-button2" text="Retry">
+         <font>
+            <Font name="Arial Bold" size="23.0" />
+         </font>
       </Button>
+
       <Button layoutX="1825.0" layoutY="10.0" mnemonicParsing="false" onAction="#minimizeWindow" prefHeight="30.0" prefWidth="30.0" text="—">
          <font>
             <Font name="Baskerville Old Face" size="20.0" />
          </font>
          <styleClass>
-            <String fx:value="minbutton1" />
+            <String fx:value="custom-button7" />
             <String fx:value="translucent" />
          </styleClass>
       </Button>
-      <Label layoutX="1042.0" layoutY="604.0" text="Info" textFill="#4d6698">
+      <Button layoutX="1870.0" layoutY="10.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="30.0" prefWidth="30.0" text="X">
          <font>
-            <Font name="Arial" size="28.0" />
+            <Font name="Arial" size="20.0" />
+         </font>
+         <styleClass>
+            <String fx:value="custom-button6" />
+            <String fx:value="translucent" />
+         </styleClass>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0e0e0" height="50.0" layoutX="983.0" layoutY="586.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="289.0" />
+      <Label fx:id="calculation" layoutX="1034.0" layoutY="130.0" styleClass="custom-text" text="00.0" />
+      <Label layoutX="1025.0" layoutY="449.0" textFill="#202020">
+         <font>
+            <Font name="Arial Black" size="45.0" />
          </font>
       </Label>
-      <Button fx:id="addtohistory" layoutX="1304.0" layoutY="918.0" mnemonicParsing="false" onAction="#addtohistory" prefHeight="60.0" prefWidth="323.0" styleClass="addtohistory" text="Add to History">
+      <Label fx:id="calculation1" layoutX="1214.0" layoutY="542.0" text="00.0" textFill="#202020">
          <font>
-            <Font name="System Bold" size="21.0" />
+            <Font name="Arial Bold" size="34.0" />
          </font>
-      </Button>
+      </Label>
+      <Label fx:id="results" layoutX="1025.0" layoutY="589.0" text="Category" textFill="#202020" wrapText="true">
+         <font>
+            <Font name="Arial Bold" size="34.0" />
+         </font>
+      </Label>
+      <Button fx:id="viewhistorybtn" layoutX="1799.0" layoutY="111.0" mnemonicParsing="false" onAction="#switchtotable" prefHeight="50.0" prefWidth="54.0" style="-fx-background-color: 0000;" textFill="TRANSPARENT" />
+      <TextField fx:id="weighttext" alignment="CENTER" layoutX="555.0" layoutY="471.0" prefHeight="240.0" prefWidth="311.0" promptText="00.0" styleClass="text-field-with-bottom-border">
+         <font>
+            <Font name="Arial Bold" size="72.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="heighttext" alignment="CENTER" layoutX="90.0" layoutY="469.0" prefHeight="242.0" prefWidth="315.0" promptText="000" styleClass="text-field-with-bottom-border">
+         <font>
+            <Font name="Arial Black" size="72.0" />
+         </font>
+      </TextField>
+      <Label fx:id="results2" layoutX="1035.0" layoutY="430.0" text="Category" textFill="#202020" wrapText="true">
+         <font>
+            <Font name="Arial Black" size="34.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../CSS/STYLE.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER.TABLECONTROLLER">
+   <children>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0">
+         <image>
+            <Image url="@../PICTURES/TABLE/BG.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0">
+         <image>
+            <Image url="@../PICTURES/TABLE/YOUR%20HISTORY.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="back" fitHeight="1080.0" fitWidth="1920.0" onMouseClicked="#loadBack">
+         <image>
+            <Image url="@../PICTURES/TABLE/BACK.png" />
+         </image>
+         <styleClass>
+            <String fx:value="translucent" />
+            <String fx:value="hand-cursor" />
+         </styleClass>
+      </ImageView>
+      <TableView fx:id="tableView" layoutX="112.0" layoutY="158.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="746.0" prefWidth="1702.0">
+        <columns>
+          <TableColumn fx:id="heightCol" prefWidth="330.0" styleClass="custom-table-cell" text="HEIGHT" />
+            <TableColumn fx:id="weightCol" prefWidth="330.0" styleClass="custom-table-cell" text="WEIGHT" />
+            <TableColumn fx:id="bmiResultCol" prefWidth="330.0" styleClass="custom-table-cell" text="BMI RESULT" />
+            <TableColumn fx:id="categoryCol" prefWidth="300.0" styleClass="custom-table-cell" text="CATEGORY" />
+            <TableColumn fx:id="dateAddedCol" prefWidth="410.0" styleClass="custom-table-cell" text="DATE ADDED" />
+        </columns>
+         <styleClass>
+            <String fx:value="custom-table-row" />
+            <String fx:value="custom-table-view" />
+            <String fx:value="custom-cell-column1" />
+         </styleClass>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button fx:id="deleteBtn" layoutX="1491.0" layoutY="961.0" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="61.0" prefWidth="322.0" styleClass="custom-button9" text="Delete">
+         <font>
+            <Font name="Arial Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button layoutX="1825.0" layoutY="10.0" mnemonicParsing="false" onAction="#minimizeWindow" prefHeight="30.0" prefWidth="30.0" text="—">
+         <font>
+            <Font name="Baskerville Old Face" size="20.0" />
+         </font>
+         <styleClass>
+            <String fx:value="custom-button7" />
+            <String fx:value="translucent" />
+         </styleClass>
+      </Button>
+      <Button layoutX="1870.0" layoutY="10.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="30.0" prefWidth="30.0" text="X">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+         <styleClass>
+            <String fx:value="custom-button6" />
+            <String fx:value="translucent" />
+         </styleClass>
+      </Button>
+   </children>
+</AnchorPane>
