@@ -13,31 +13,26 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class ResultsController implements Initializable {
-    @FXML
-    private TextField heighttext, weighttext;
+
+
+public class SignupController implements Initializable {
 
     @FXML
     Stage stage;
     
     @FXML
-    private Button addtohistory; 
+    private Button signup; 
 
     @FXML
     private AnchorPane anchorRoot;
 
     @FXML
     private StackPane parentContainer;
-
-    @FXML
-    private ImageView history;
     
 
     // EXIT & MIN BUTTONS-------------------------------------------------------------------
@@ -50,42 +45,43 @@ public class ResultsController implements Initializable {
         stage.setIconified(true);
     }
 
+    @FXML
+    private void login1(MouseEvent event) throws IOException {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/Login.fxml"));
+            Parent root = loader.load();
+            
+            Scene scene = signup.getScene();
+            Stage currentStage = (Stage) scene.getWindow();
+    
+            scene.setRoot(root);
+            
+            currentStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void login2(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/Login.fxml"));
+            Parent root = loader.load();
+            
+            Scene scene = signup.getScene();
+            Stage currentStage = (Stage) scene.getWindow();
+    
+            scene.setRoot(root);
+            
+            currentStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Your initialization code here
     }
 
-    @FXML
-    private void addtohistory(ActionEvent event) throws IOException {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/History.fxml"));
-            Parent root = loader.load();
-            
-            Scene scene = addtohistory.getScene();
-            Stage currentStage = (Stage) scene.getWindow();
-    
-            scene.setRoot(root);
-            
-            currentStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    private void history(MouseEvent event) throws IOException {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/History.fxml"));
-            Parent root = loader.load();
-            
-            Scene scene = history.getScene();
-            Stage currentStage = (Stage) scene.getWindow();
-    
-            scene.setRoot(root);
-            
-            currentStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
