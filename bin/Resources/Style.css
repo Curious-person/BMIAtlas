@@ -245,8 +245,113 @@
 .fade-in {
     -fx-opacity: 0;
     -fx-translate-x: -200;
-
     -fx-opacity: 1;
     -fx-translate-x: 0;
     -fx-transition: all 1s ease;
+}
+
+
+/* Style the date picker */
+.date-picker {
+    -fx-background-color: #A3B5DC;
+    -fx-border-color: #F9FAF4;
+    -fx-font-size: 16px; 
+    -fx-font-family: "Arial";
+}
+
+/* Style the date picker text field */
+.date-picker .text-field {
+    -fx-background-color: #A3B5DC;
+    -fx-text-fill: #4D6698;
+    -fx-prompt-text-fill: #7C9AD6;
+}
+
+/* Style the calendar cells */
+.date-picker .day-cell {
+    -fx-background-color: #F9FAF4;
+}
+
+.date-picker .arrow {
+    -fx-background-color: #4D6698;
+    -fx-text-fill: #4D6698;
+    -fx-background-insets: 0;
+    -fx-border-radius: 0;
+}
+
+.date-picker .day-cell:hover {
+    -fx-background-color: #A3B5DC;
+}
+
+.date-picker .day-cell:selected {
+    -fx-background-color: #4D6698;
+    -fx-text-fill: #F9FAF4;
+}
+
+.date-picker .today {
+    -fx-background-color: #A3B5DC;
+    -fx-text-fill: #F9FAF4;
+}
+
+/* Style the filled days */
+.date-picker .day-cell:filled {
+    -fx-text-fill: #4D6698;
+}
+
+/* Style the empty days */
+.date-picker .day-cell:empty {
+    -fx-background-color: #7C9AD6;
+    -fx-text-fill: #A3B5DC;
+}
+
+/* Style the navigation buttons */
+.date-picker .left-button,
+.date-picker .right-button {
+    -fx-background-color: #F9FAF4;
+    -fx-text-fill: #4D6698;
+
+}
+
+.date-picker-popup .month-year-pane  {
+    -fx-background-color: #F9FAF4;
+    
+}
+.day-name-cell {
+    -fx-background-color: #A3B5DC; /* Set the background color */
+    -fx-text-fill: #4D6698;
+}
+
+ 
+.radio-button .radio {
+    -fx-border-width: 1px;
+    -fx-border-color: #F9FAF4;
+    -fx-background-color:#F9FAF4;
+    -fx-background-image: null;
+    -fx-border-radius: 10px;
+    -fx-padding: 1px;
+}
+.radio-button .radio:selected {
+    -fx-background-color: #F9FAF4;
+    -fx-background-image: null;
+}
+.radio-button -radio:armed {
+    -fx-background-color:  #F9FAF4;
+    -fx-background-image: null;
+}
+.radio-button -radio:determinate {
+    -fx-background-color: #F9FAF4;
+    -fx-background-image: null;
+}
+.radio-button -radio:indeterminate {
+    -fx-background-color: #F9FAF4;
+    -fx-background-image: null;
+}
+.radio-button .dot {
+    -fx-background-radius: 10px;
+    -fx-padding: 5px;
+}
+
+.radio-button:selected .radio .dot {
+   -fx-background-radius: 10px;
+   -fx-background-color: #4D6698;
+   -fx-background-insets: 0;
 }

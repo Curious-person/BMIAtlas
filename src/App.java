@@ -19,11 +19,11 @@ public class App extends Application {
     public void start(Stage stage) throws Exception {
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/VIEW/CALCULATOR.fxml"));
-            stage.setTitle("BMI");
+            Parent root = FXMLLoader.load(getClass().getResource("/View/Login.fxml"));
+            stage.setTitle("BMI Atlas");
             stage.setResizable(false);
             Scene scene = new Scene(root);
-            stage.getIcons().add(new Image(App.class.getResourceAsStream("/PICTURES/CALCULATOR/LOGO (2).png")));
+            stage.getIcons().add(new Image(App.class.getResourceAsStream("Resources/Pictures/Calculator/ProfileIcon2.png")));
             stage.setScene(scene);
             stage.setFullScreen(false);
             stage.setWidth(1920);
