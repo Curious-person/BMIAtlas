@@ -69,7 +69,7 @@
             <Font name="System Bold" size="21.0" />
          </font>
       </Button>
-      <TextField layoutX="1061.0" layoutY="452.0" prefHeight="65.0" prefWidth="757.0" promptText="cm" styleClass="textfield">
+      <TextField fx:id="heighttext" layoutX="1061.0" layoutY="452.0" prefHeight="65.0" prefWidth="757.0" promptText="cm" styleClass="textfield">
          <font>
             <Font name="Arial Italic" size="17.0" />
          </font>
@@ -87,7 +87,7 @@
             <Font name="Arial Narrow" size="28.0" />
          </font>
       </Label>
-      <TextField layoutX="1062.0" layoutY="596.0" prefHeight="65.0" prefWidth="757.0" promptText="kg" styleClass="textfield">
+      <TextField fx:id="weighttext" layoutX="1062.0" layoutY="596.0" prefHeight="65.0" prefWidth="757.0" promptText="kg" styleClass="textfield">
          <font>
             <Font name="Arial Italic" size="17.0" />
          </font>
@@ -131,6 +131,12 @@
             <String fx:value="translucent" />
          </styleClass>
       </Button>
+            <Button fx:id="historybtn" layoutX="1825.0" layoutY="109.0" mnemonicParsing="false" onAction="#loadSecond" prefHeight="49.0" prefWidth="52.0">
+               <styleClass>
+                  <String fx:value="custom-button4" />
+                  <String fx:value="translucent" />
+               </styleClass>
+            </Button>
    </children>
 </AnchorPane>
    </children>
