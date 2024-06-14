@@ -2,6 +2,10 @@ package Controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import javafx.application.Platform;
@@ -13,12 +17,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import models.Database;
 
 public class ResultsController implements Initializable {
     @FXML
@@ -28,7 +34,7 @@ public class ResultsController implements Initializable {
     Stage stage;
 
     @FXML
-    private Button calculation;
+    private Label calculation, calculation1, results;
     
     @FXML
     private Button addtohistory; 
@@ -55,8 +61,9 @@ public class ResultsController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Your initialization code here
+        loadDataFromDatabase();
     }
+
 
     @FXML
     private void addtohistory(ActionEvent event) throws IOException {
@@ -88,6 +95,38 @@ public class ResultsController implements Initializable {
             
             currentStage.show();
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+        private void loadDataFromDatabase() {
+        try {
+            Connection connection = Database.DBConnect();
+            if (connection != null) {
+                String query = "SELECT * FROM bmi_calculation ORDER BY calculationID DESC LIMIT 1";
+                PreparedStatement preparedStatement = connection.prepareStatement(query);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                if (resultSet.next()) {
+                    double height = resultSet.getDouble("height");
+                    double weight = resultSet.getDouble("weight");
+                    double bmi = resultSet.getDouble("bmi");
+                    String category = resultSet.getString("category");
+
+                    heighttext.setText(String.valueOf(height));
+                    weighttext.setText(String.valueOf(weight));
+                    calculation.setText(String.valueOf(bmi));
+                    calculation1.setText(String.valueOf(bmi));
+                    results.setText(category);
+                } else {
+                    System.out.println("No data found in bmi_calculation table.");
+                }
+                resultSet.close();
+                preparedStatement.close();
+                connection.close();
+            } else {
+                System.out.println("Failed to connect to the database.");
+            }
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }

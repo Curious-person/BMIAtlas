@@ -33,7 +33,7 @@ import models.Database;
 
 public class CalculatorController implements Initializable{
     @FXML
-    private Button calculate; 
+    private Button calculatebtn; 
     
     @FXML
     private AnchorPane anchorRoot;
@@ -62,10 +62,10 @@ public class CalculatorController implements Initializable{
     @FXML
     private void loadSecond(ActionEvent event) throws IOException {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VIEW/History.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/History.fxml"));
             Parent root = loader.load();
             
-            Scene scene = calculate.getScene();
+            Scene scene = calculatebtn.getScene();
             Stage currentStage = (Stage) scene.getWindow();
     
             scene.setRoot(root);
@@ -81,7 +81,7 @@ public class CalculatorController implements Initializable{
     }
 
     @FXML
-    private void results(ActionEvent event) throws IOException {
+    private void btncalculate(ActionEvent event) throws IOException {
         String heightText = heighttext.getText();
         String weightText = weighttext.getText();
 
@@ -113,15 +113,18 @@ public class CalculatorController implements Initializable{
                 return;
             }
 
-            // Calculate BMI
+            // Calculate bmi
             double result = calculateResult(height, weight);
             String category = calculateCategory(result);
 
             // Insert data into the database
             insertDataIntoDatabase(height, weight, result, category);
 
-       Parent root = FXMLLoader.load(getClass().getResource("/View/Results.fxml"));
-        Scene scene = calculate.getScene();
+            // Load the RESULTS.fxml file
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/Results.fxml"));
+            Parent root = loader.load();
+
+        Scene scene = calculatebtn.getScene();
         root.translateXProperty().set(scene.getHeight());
 
         parentContainer.getChildren().add(root);
@@ -144,74 +147,13 @@ public class CalculatorController implements Initializable{
     }
     }
 
-    /*@FXML
-    private void results(ActionEvent event) throws IOException {
-        String heightText = heighttext.getText();
-        String weightText = weighttext.getText();
-
-        if (heightText.isEmpty()) {
-            showAlert("Error", "Please input height.");
-            return;
-        }
-
-        if (weightText.isEmpty()) {
-            showAlert("Error", "Please input weight.");
-            return;
-        }
-
-        try {
-            height = Double.parseDouble(heightText);
-            weight = Double.parseDouble(weightText);
-
-            // Check if height and weight are positive numbers
-            if (height <= 0 || weight <= 0) {
-                showAlert("Error", "Height and weight must be positive.");
-                return;
-            }
-
-            // Check if height and weight are integers
-            int heightInt = (int) height;
-            int weightInt = (int) weight;
-            if (height != heightInt || weight != weightInt) {
-                showAlert("Error", "Please input integers only.");
-                return;
-            }
-
-            // Calculate BMI
-            double result = calculateResult(height, weight);
-            String category = calculateCategory(result);
-
-            // Insert data into the database
-            insertDataIntoDatabase(height, weight, result, category);
-
-            // Load the RESULTS.fxml file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VIEW/RESULTS.fxml"));
-            Parent root = loader.load();
-
-            // Transition to the RESULTS scene
-            Scene scene = calculate.getScene();
-            root.translateXProperty().set(scene.getHeight());
-
-            parentContainer.getChildren().add(root);
-
-            // Remove current scene after animation
-            Timeline timeline = new Timeline();
-            KeyValue kv = new KeyValue(root.translateXProperty(), 0, Interpolator.EASE_IN);
-            KeyFrame kf = new KeyFrame(Duration.seconds(.5), kv);
-
-            timeline.getKeyFrames().add(kf);
-            timeline.setOnFinished(t -> {
-                parentContainer.getChildren().remove(anchorRoot);
-            });
-
-            timeline.play();
-
-        } catch (NumberFormatException e) {
-            showAlert("Error", "Please input integers only.");
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    } */
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
 
         private void insertDataIntoDatabase(double height, double weight, double bmi, String category) {
         Connection connection = null;
@@ -220,7 +162,7 @@ public class CalculatorController implements Initializable{
         try {
             connection = Database.DBConnect();
             if (connection != null) {
-                String query = "INSERT INTO bmi_results (height, weight, bmi, category) VALUES (?, ?, ?, ?)";
+                String query = "INSERT INTO bmi_calculation (height, weight, bmi, category) VALUES (?, ?, ?, ?)";
                 preparedStatement = connection.prepareStatement(query);
                 preparedStatement.setDouble(1, height);
                 preparedStatement.setDouble(2, weight);
@@ -244,13 +186,7 @@ public class CalculatorController implements Initializable{
         }
     }
 
-        private void showAlert(String title, String message) {
-        Alert alert = new Alert(AlertType.ERROR);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
+
 
     private String calculateCategory(double result) {
         if (result < 18.5) {
