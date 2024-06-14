@@ -1,9 +1,8 @@
-CREATE TABLE `user_login` (
-  `UserID` int(11) NOT NULL AUTO_INCREMENT,
-  `Username` varchar(50) NOT NULL,
-  `Email` varchar(100) NOT NULL,
-  `Password` varchar(100) NOT NULL,
-  `Birthdate` date NOT NULL,
-  `Sex` enum('Male','Female') NOT NULL,
-  PRIMARY KEY (`UserID`)
-);
+CREATE TABLE `bmi_calculation` (
+  `calculationID` int(11) NOT NULL,
+  `bmi` double NOT NULL,
+  `height` double NOT NULL,
+  `weight` double NOT NULL,
+  `category` varchar(50) NOT NULL,
+  PRIMARY KEY (`calculationID`)
+) 
