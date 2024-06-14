@@ -155,7 +155,7 @@ public class CalculatorController implements Initializable{
         alert.showAndWait();
     }
 
-        private void insertDataIntoDatabase(double height, double weight, double bmi, String category) {
+    private void insertDataIntoDatabase(double height, double weight, double bmi, String category) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         
@@ -169,6 +169,7 @@ public class CalculatorController implements Initializable{
                 preparedStatement.setDouble(3, bmi);
                 preparedStatement.setString(4, category);
                 preparedStatement.executeUpdate();
+                System.out.println("Data inserted successfully.");
             }
         } catch (SQLException e) {
             e.printStackTrace();
