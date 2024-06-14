@@ -26,6 +26,9 @@ public class ResultsController implements Initializable {
 
     @FXML
     Stage stage;
+
+    @FXML
+    private Button calculation;
     
     @FXML
     private Button addtohistory; 
