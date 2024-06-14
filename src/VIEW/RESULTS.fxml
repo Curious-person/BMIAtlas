@@ -66,7 +66,7 @@
       </Label>
       <Label fx:id="calculation" layoutX="1009.0" layoutY="82.0" styleClass="bmiresult" text="00.0" />
       <Label fx:id="calculation1" layoutX="1024.0" layoutY="366.0" styleClass="categoryresult" text="Category" />
-      <Button layoutX="319.0" layoutY="918.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="323.0" styleClass="loginbutton" text="Retry">
+      <Button fx:id="retrybtn" layoutX="319.0" layoutY="918.0" mnemonicParsing="false" onAction="#btncalculate1" prefHeight="60.0" prefWidth="323.0" styleClass="loginbutton" text="Retry">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
@@ -81,7 +81,7 @@
             <Font name="System Bold" size="21.0" />
          </font>
       </Button>
-      <TextField layoutX="102.0" layoutY="452.0" prefHeight="65.0" prefWidth="757.0" promptText="cm" styleClass="textfield">
+      <TextField fx:id="heighttext" layoutX="102.0" layoutY="452.0" prefHeight="65.0" prefWidth="757.0" promptText="cm" styleClass="textfield">
          <font>
             <Font name="Arial Italic" size="17.0" />
          </font>
@@ -99,7 +99,7 @@
             <Font name="Arial Narrow" size="28.0" />
          </font>
       </Label>
-      <TextField layoutX="103.0" layoutY="596.0" prefHeight="65.0" prefWidth="757.0" promptText="kg" styleClass="textfield">
+      <TextField fx:id="weighttext" layoutX="103.0" layoutY="596.0" prefHeight="65.0" prefWidth="757.0" promptText="kg" styleClass="textfield">
          <font>
             <Font name="Arial Italic" size="17.0" />
          </font>
